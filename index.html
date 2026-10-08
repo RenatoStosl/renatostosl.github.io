@@ -7,8 +7,8 @@
   <title>Renato Santos Lourenço — Desenvolvedor Front-End</title>
   <meta name="description" content="Portfólio de Renato Santos Lourenço, desenvolvedor front-end em João Pessoa (PB). Interfaces web acessíveis e responsivas com HTML, CSS, JavaScript, React e Next.js.">
   <meta name="author" content="Renato Santos Lourenço">
-  <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f6f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#050505" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://renatostosl.github.io/">
   <link rel="icon" href="./favicon.ico">
 
@@ -32,7 +32,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400..800;1,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/components.css">
   <link rel="stylesheet" href="./css/sections.css">
@@ -61,19 +61,20 @@
 
   <!-- HEADER -->
   <header class="site-header" data-header>
-    <div class="container">
+    <div class="container header-inner">
       <a href="#topo" class="brand" aria-label="Renato Santos — início">
         <span class="brand-mark" aria-hidden="true">RS</span>
-        <span>Renato<span class="brand-dot">.</span></span>
+        <span class="brand-name">Renato Santos</span>
       </a>
 
       <nav class="nav" aria-label="Principal">
         <ul class="nav-list" id="nav-list" data-nav-list>
-          <li><a class="nav-link" href="#abordagem">Abordagem</a></li>
+          <li><a class="nav-link" href="#sobre">Sobre</a></li>
           <li><a class="nav-link" href="#projetos">Projetos</a></li>
+          <li><a class="nav-link" href="#abordagem">Abordagem</a></li>
           <li><a class="nav-link" href="#trajetoria">Trajetória</a></li>
           <li><a class="nav-link" href="#formacao">Formação</a></li>
-          <li><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-cta-mobile"><a class="nav-link" href="#contato">Contato</a></li>
         </ul>
 
         <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema claro/escuro">
@@ -81,8 +82,10 @@
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
         </button>
 
+        <a href="#contato" class="btn btn-primary btn-sm header-cta">Vamos conversar</a>
+
         <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menu">
-          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
           <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
       </nav>
@@ -93,19 +96,21 @@
 
     <!-- HERO -->
     <section class="hero" id="topo" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="hero-status" data-reveal>
-            <span class="status-dot" aria-hidden="true"></span>
-            Desenvolvedor Front-End · João Pessoa, PB
-          </p>
+      <div class="container">
+        <p class="hero-kicker" data-reveal>
+          <span class="status-dot" aria-hidden="true"></span>
+          Desenvolvedor front-end<span class="hero-kicker-sep" aria-hidden="true">/</span>João Pessoa, PB
+        </p>
 
-          <h1 id="hero-title" class="hero-title" data-reveal style="--reveal-i: 1">
-            Renato<br>Santos<span class="hero-title-dot">.</span>
-          </h1>
+        <h1 id="hero-title" class="hero-title" data-reveal style="--reveal-i: 1">
+          Interfaces que<br>
+          funcionam para<br>
+          <em>todo mundo.</em>
+        </h1>
 
+        <div class="hero-foot">
           <p class="hero-lead" data-reveal style="--reveal-i: 2">
-            Construo interfaces web <strong>acessíveis</strong>, responsivas e bem estruturadas —
+            Construo produtos web <strong>acessíveis</strong>, responsivos e bem estruturados —
             unindo código front-end sólido a uma pesquisa de mestrado em acessibilidade digital.
           </p>
 
@@ -118,75 +123,179 @@
           </div>
         </div>
 
-        <figure class="hero-portrait" data-reveal style="--reveal-i: 2">
-          <img src="./img/foto-perfil-600.jpg" width="600" height="900" alt="Retrato de Renato Santos Lourenço" fetchpriority="high">
+        <ul class="shortcuts" data-reveal style="--reveal-i: 4">
+          <li><a href="#projetos" class="shortcut"><span class="shortcut-num">01</span>Front-end<small>React · Next.js</small></a></li>
+          <li><a href="#trajetoria" class="shortcut"><span class="shortcut-num">02</span>Full-stack<small>Django · PostgreSQL</small></a></li>
+          <li><a href="#abordagem" class="shortcut"><span class="shortcut-num">03</span>Acessibilidade<small>WCAG · leitores de tela</small></a></li>
+          <li><a href="#formacao" class="shortcut"><span class="shortcut-num">04</span>UI Design<small>do layout ao código</small></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MARQUEE STACK -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>Python</span><span>Django</span><span>PostgreSQL</span><span>Git</span><span>Vercel</span>
+        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>Python</span><span>Django</span><span>PostgreSQL</span><span>Git</span><span>Vercel</span>
+      </div>
+    </div>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container about">
+        <figure class="about-portrait" data-reveal>
+          <img src="./img/foto-perfil-600.jpg" width="600" height="900" alt="Retrato de Renato Santos Lourenço" loading="lazy">
           <figcaption class="portrait-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><path d="M5 8.5h14M12 8.5v5M12 13.5l-3.5 7M12 13.5l3.5 7"/></svg>
             Pesquisa em acessibilidade digital
           </figcaption>
         </figure>
-      </div>
 
-      <div class="container">
-        <dl class="stats" data-reveal style="--reveal-i: 4">
-          <div class="stat">
-            <dt>do front-end ao banco de dados com React, Django e PostgreSQL</dt>
-            <dd>Full-stack</dd>
+        <div class="about-copy">
+          <p class="eyebrow" data-reveal><span class="eyebrow-num">01.</span> Sobre</p>
+          <h2 id="sobre-title" class="section-title" data-reveal>Da sala de aula ao código em produção.</h2>
+          <div class="about-text" data-reveal style="--reveal-i: 1">
+            <p>Comecei ensinando informática básica no Senac, passei pela gestão pública na UFPB e encontrei no front-end o lugar onde tecnologia e pessoas se encontram.</p>
+            <p>Hoje desenvolvo sistemas institucionais no <strong>IFPB</strong>, do front-end ao banco de dados, e pesquiso no mestrado como tornar a web realmente acessível.</p>
           </div>
-          <div class="stat">
-            <dt>sistemas institucionais no IFPB e na UFPB</dt>
-            <dd>Setor público</dd>
-          </div>
-          <div class="stat">
-            <dt>sistemas corporativos e sites publicados em uso real</dt>
-            <dd>Em produção</dd>
-          </div>
-          <div class="stat">
-            <dt>pesquisa de mestrado em acessibilidade digital</dt>
-            <dd>Acessibilidade</dd>
-          </div>
-        </dl>
+        </div>
       </div>
     </section>
+
+    <!-- PROJETOS -->
+    <section class="section" id="projetos" aria-labelledby="projetos-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-num">02.</span> Projetos</p>
+            <h2 id="projetos-title" class="section-title">Alguns projetos que entreguei.</h2>
+          </div>
+          <p>De sites institucionais em produção a aplicações com autenticação e API.</p>
+        </header>
+
+        <ul class="projects">
+          <li class="project" data-reveal>
+            <a class="project-link" href="https://www.suacidadeconectada.com.br/" target="_blank" rel="noopener noreferrer">
+              <div class="project-preview" aria-hidden="true">
+                <img class="project-cover" src="./img/projetos/cidade-conectada.jpg" width="1200" height="900" alt="" loading="lazy" decoding="async">
+                <code class="project-url">suacidadeconectada.com.br</code>
+                <span class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+              </div>
+              <div class="project-body">
+                <p class="project-meta"><span>01</span> Profissional · Cubo Tecnologia</p>
+                <h3 class="project-name">Cidade Conectada</h3>
+                <p class="project-desc">Site institucional do sistema Cidade Conectada, desenvolvido durante meu vínculo com a Cubo Tecnologia.</p>
+                <div class="tags"><span class="tag">React</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsividade</span></div>
+                <span class="sr-only">(abre em nova aba)</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="project" data-reveal style="--reveal-i: 1">
+            <a class="project-link" href="https://dogs-next-three.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <div class="project-preview" aria-hidden="true">
+                <img class="project-cover" src="./img/projetos/dogs.jpg" width="1200" height="900" alt="" loading="lazy" decoding="async">
+                <code class="project-url">dogs-next.vercel.app</code>
+                <span class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+              </div>
+              <div class="project-body">
+                <p class="project-meta"><span>02</span> Aplicação · Origamid</p>
+                <h3 class="project-name">Dogs</h3>
+                <p class="project-desc">Rede social para cachorros com feed, upload de fotos e autenticação.</p>
+                <div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">API</span></div>
+                <span class="sr-only">(abre em nova aba)</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="project" data-reveal>
+            <a class="project-link" href="https://renatostosl.github.io/bikcraft/" target="_blank" rel="noopener noreferrer">
+              <div class="project-preview" aria-hidden="true">
+                <img class="project-cover" src="./img/projetos/bikcraft.jpg" width="1200" height="900" alt="" loading="lazy" decoding="async">
+                <code class="project-url">renatostosl.github.io/bikcraft</code>
+                <span class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+              </div>
+              <div class="project-body">
+                <p class="project-meta"><span>03</span> E-commerce · Origamid</p>
+                <h3 class="project-name">Bikcraft</h3>
+                <p class="project-desc">Loja virtual para uma marca de bicicletas artesanais.</p>
+                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                <span class="sr-only">(abre em nova aba)</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="project" data-reveal style="--reveal-i: 1">
+            <a class="project-link" href="https://www.nucleomednm.com.br/" target="_blank" rel="noopener noreferrer">
+              <div class="project-preview" aria-hidden="true">
+                <img class="project-cover" src="./img/projetos/nucleo-med.jpg" width="1200" height="900" alt="" loading="lazy" decoding="async">
+                <code class="project-url">nucleomednm.com.br</code>
+                <span class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+              </div>
+              <div class="project-body">
+                <p class="project-meta"><span>04</span> Institucional · Saúde</p>
+                <h3 class="project-name">Núcleo Med NM</h3>
+                <p class="project-desc">Página institucional para uma assessoria médica, do UI design à implementação.</p>
+                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">UI Design</span></div>
+                <span class="sr-only">(abre em nova aba)</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <div class="projects-more">
+          <a href="https://github.com/RenatoStosl?tab=repositories" target="_blank" rel="noopener noreferrer" class="link-arrow">
+            Ver todos os repositórios no GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span class="sr-only">(abre em nova aba)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Acessível por padrão</span><span>Mobile-first</span><span>Código sustentável</span>
+        <span>Acessível por padrão</span><span>Mobile-first</span><span>Código sustentável</span>
+      </div>
+    </div>
 
     <!-- ABORDAGEM -->
     <section class="section" id="abordagem" aria-labelledby="abordagem-title">
       <div class="container">
         <header class="section-head">
           <div>
-            <p class="eyebrow"><span class="eyebrow-num">01</span> / Abordagem</p>
-            <h2 id="abordagem-title">Como eu construo interfaces</h2>
+            <p class="eyebrow"><span class="eyebrow-num">03.</span> Abordagem</p>
+            <h2 id="abordagem-title" class="section-title">Como eu construo interfaces.</h2>
           </div>
           <p>Três princípios guiam cada projeto, do primeiro componente ao deploy.</p>
         </header>
 
-        <ul class="principles">
-          <li class="card principle" data-reveal>
-            <span class="principle-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><path d="M5 8.5h14M12 8.5v5M12 13.5l-3.5 7M12 13.5l3.5 7"/></svg>
-            </span>
-            <h3>Acessível por padrão</h3>
-            <p>HTML semântico, contraste adequado, navegação por teclado e leitores de tela. Tema que também é objeto da minha pesquisa de mestrado.</p>
+        <ol class="rows">
+          <li class="row" data-reveal>
+            <span class="row-num">01</span>
+            <h3 class="row-title">Acessível por padrão</h3>
+            <p class="row-desc">HTML semântico, contraste adequado, navegação por teclado e leitores de tela. Tema que também é objeto da minha pesquisa de mestrado.</p>
+            <span class="row-tag">WCAG</span>
           </li>
-          <li class="card principle" data-reveal style="--reveal-i: 1">
-            <span class="principle-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
-            </span>
-            <h3>Mobile-first</h3>
-            <p>Layouts fluidos pensados primeiro para telas pequenas, que escalam com naturalidade até o desktop.</p>
+          <li class="row" data-reveal>
+            <span class="row-num">02</span>
+            <h3 class="row-title">Mobile-first</h3>
+            <p class="row-desc">Layouts fluidos pensados primeiro para telas pequenas, que escalam com naturalidade até o desktop.</p>
+            <span class="row-tag">Responsivo</span>
           </li>
-          <li class="card principle" data-reveal style="--reveal-i: 2">
-            <span class="principle-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
-            </span>
-            <h3>Código sustentável</h3>
-            <p>Componentes reutilizáveis em React, versionamento com Git e manutenção de sistemas corporativos em produção.</p>
+          <li class="row" data-reveal>
+            <span class="row-num">03</span>
+            <h3 class="row-title">Código sustentável</h3>
+            <p class="row-desc">Componentes reutilizáveis em React, versionamento com Git e manutenção de sistemas corporativos em produção.</p>
+            <span class="row-tag">Componentes</span>
           </li>
-        </ul>
+        </ol>
 
-        <div class="card stack" data-reveal>
-          <h3 class="stack-title">Stack</h3>
-          <dl class="stack-groups">
+        <div class="tools" data-reveal>
+          <h3 class="tools-title">Ferramentas</h3>
+          <dl class="tools-groups">
             <div>
               <dt>Linguagens</dt>
               <dd class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript ES6+</span><span class="tag">TypeScript</span><span class="tag">Python</span></dd>
@@ -208,115 +317,20 @@
       </div>
     </section>
 
-    <!-- PROJETOS -->
-    <section class="section" id="projetos" aria-labelledby="projetos-title">
-      <div class="container">
-        <header class="section-head">
-          <div>
-            <p class="eyebrow"><span class="eyebrow-num">02</span> / Projetos</p>
-            <h2 id="projetos-title">Trabalhos selecionados</h2>
-          </div>
-          <p>De sites institucionais em produção a aplicações com autenticação e API.</p>
-        </header>
-
-        <ul class="projects">
-          <li class="project project--wide" data-reveal>
-            <a class="card project-link" href="https://www.suacidadeconectada.com.br/" target="_blank" rel="noopener noreferrer">
-              <div class="project-preview" aria-hidden="true" style="--hue: 222">
-                <div class="browser-bar"><span></span><span></span><span></span><code>suacidadeconectada.com.br</code></div>
-                <span class="project-monogram">CC</span>
-              </div>
-              <div class="project-body">
-                <p class="project-meta"><span>01</span> Profissional · Cubo Tecnologia</p>
-                <h3 class="project-name">Cidade Conectada</h3>
-                <p class="project-desc">Site institucional do sistema Cidade Conectada, desenvolvido durante meu vínculo com a Cubo Tecnologia.</p>
-                <div class="tags"><span class="tag">React</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsividade</span></div>
-                <span class="project-cta">Visitar site <span class="sr-only">(abre em nova aba)</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-                </span>
-              </div>
-            </a>
-          </li>
-
-          <li class="project" data-reveal style="--reveal-i: 1">
-            <a class="card project-link" href="https://dogs-next-three.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <div class="project-preview" aria-hidden="true" style="--hue: 28">
-                <div class="browser-bar"><span></span><span></span><span></span><code>dogs-next.vercel.app</code></div>
-                <span class="project-monogram">Dg</span>
-              </div>
-              <div class="project-body">
-                <p class="project-meta"><span>02</span> Aplicação · Origamid</p>
-                <h3 class="project-name">Dogs</h3>
-                <p class="project-desc">Rede social para cachorros com feed, upload de fotos e autenticação.</p>
-                <div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">API</span></div>
-                <span class="project-cta">Visitar site <span class="sr-only">(abre em nova aba)</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-                </span>
-              </div>
-            </a>
-          </li>
-
-          <li class="project" data-reveal>
-            <a class="card project-link" href="https://renatostosl.github.io/bikcraft/" target="_blank" rel="noopener noreferrer">
-              <div class="project-preview" aria-hidden="true" style="--hue: 48">
-                <div class="browser-bar"><span></span><span></span><span></span><code>renatostosl.github.io/bikcraft</code></div>
-                <span class="project-monogram">Bk</span>
-              </div>
-              <div class="project-body">
-                <p class="project-meta"><span>03</span> E-commerce · Origamid</p>
-                <h3 class="project-name">Bikcraft</h3>
-                <p class="project-desc">Loja virtual para uma marca de bicicletas artesanais.</p>
-                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-                <span class="project-cta">Visitar site <span class="sr-only">(abre em nova aba)</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-                </span>
-              </div>
-            </a>
-          </li>
-
-          <li class="project project--wide" data-reveal style="--reveal-i: 1">
-            <a class="card project-link" href="https://www.nucleomednm.com.br/" target="_blank" rel="noopener noreferrer">
-              <div class="project-preview" aria-hidden="true" style="--hue: 168">
-                <div class="browser-bar"><span></span><span></span><span></span><code>nucleomednm.com.br</code></div>
-                <span class="project-monogram">NM</span>
-              </div>
-              <div class="project-body">
-                <p class="project-meta"><span>04</span> Institucional · Saúde</p>
-                <h3 class="project-name">Núcleo Med NM</h3>
-                <p class="project-desc">Página institucional para uma assessoria médica, do UI design à implementação.</p>
-                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">UI Design</span></div>
-                <span class="project-cta">Visitar site <span class="sr-only">(abre em nova aba)</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-                </span>
-              </div>
-            </a>
-          </li>
-        </ul>
-
-        <div class="projects-more">
-          <a href="https://github.com/RenatoStosl?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            Todos os repositórios no GitHub
-            <span class="sr-only">(abre em nova aba)</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- TRAJETÓRIA -->
     <section class="section" id="trajetoria" aria-labelledby="trajetoria-title">
       <div class="container">
         <header class="section-head">
           <div>
-            <p class="eyebrow"><span class="eyebrow-num">03</span> / Trajetória</p>
-            <h2 id="trajetoria-title">Experiência</h2>
+            <p class="eyebrow"><span class="eyebrow-num">04.</span> Trajetória</p>
+            <h2 id="trajetoria-title" class="section-title">O caminho até aqui.</h2>
           </div>
           <p>Desenvolvimento, gestão e ensino — uma trajetória que conecta tecnologia e pessoas.</p>
         </header>
 
         <ol class="timeline">
           <li class="timeline-item" data-reveal>
-            <p class="timeline-period"><time datetime="2026">2026</time> – atual</p>
+            <p class="timeline-period"><time datetime="2026">2026</time> — atual</p>
             <div class="timeline-body">
               <h3>Analista de Tecnologia da Informação</h3>
               <p class="timeline-org">IFPB</p>
@@ -325,7 +339,7 @@
             <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span></div>
           </li>
           <li class="timeline-item" data-reveal>
-            <p class="timeline-period"><time datetime="2023">2023</time> – <time datetime="2026">2026</time></p>
+            <p class="timeline-period"><time datetime="2023">2023</time> — <time datetime="2026">2026</time></p>
             <div class="timeline-body">
               <h3>Desenvolvedor Front-End</h3>
               <p class="timeline-org">Cubo Tecnologia</p>
@@ -360,34 +374,32 @@
       <div class="container">
         <header class="section-head">
           <div>
-            <p class="eyebrow"><span class="eyebrow-num">04</span> / Formação</p>
-            <h2 id="formacao-title">Acadêmico e cursos</h2>
+            <p class="eyebrow"><span class="eyebrow-num">05.</span> Formação</p>
+            <h2 id="formacao-title" class="section-title">Estudo contínuo.</h2>
           </div>
           <p>Base em sistemas de informação, gestão de TI e pesquisa em acessibilidade.</p>
         </header>
 
         <ul class="degrees">
-          <li class="card degree" data-reveal>
+          <li class="degree" data-reveal>
             <p class="degree-level">Bacharelado</p>
             <h3>Sistemas de Informação</h3>
             <p class="degree-school">Uniesp</p>
           </li>
-          <li class="card degree" data-reveal style="--reveal-i: 1">
+          <li class="degree" data-reveal style="--reveal-i: 1">
             <p class="degree-level">Especialização</p>
             <h3>Gestão de Tecnologia da Informação</h3>
             <p class="degree-school">Faculdade Única</p>
           </li>
-          <li class="card degree degree--highlight" data-reveal style="--reveal-i: 2">
+          <li class="degree degree--highlight" data-reveal style="--reveal-i: 2">
             <p class="degree-level">Mestrado</p>
             <h3>Políticas Públicas, Gestão e Avaliação da Educação Superior</h3>
             <p class="degree-school">UFPB · foco em acessibilidade digital</p>
           </li>
         </ul>
 
-        <div class="card courses" data-reveal>
-          <div class="courses-head">
-            <h3>Cursos intensivos</h3>
-          </div>
+        <div class="courses" data-reveal>
+          <h3 class="courses-title">Cursos intensivos</h3>
           <ul class="courses-list">
             <li><span>JavaScript Completo ES6</span><span class="hours">74 h</span></li>
             <li><span>HTML e CSS para Iniciantes</span><span class="hours">46 h</span></li>
@@ -405,12 +417,12 @@
     <section class="section contact" id="contato" aria-labelledby="contato-title">
       <div class="container">
         <div class="contact-panel" data-reveal>
-          <p class="eyebrow"><span class="eyebrow-num">05</span> / Contato</p>
-          <h2 id="contato-title">Vamos construir algo juntos?</h2>
+          <p class="eyebrow"><span class="eyebrow-num">06.</span> Contato</p>
+          <h2 id="contato-title" class="contact-title">Tem um projeto<br>em mente?</h2>
           <p class="contact-lead">Aberto a conversas sobre projetos, oportunidades e colaborações.</p>
 
           <div class="contact-email">
-            <a href="mailto:renatosantoslourenco@gmail.com" class="btn contact-email-link">
+            <a href="mailto:renatosantoslourenco@gmail.com" class="btn btn-invert contact-email-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
               <span>renatosantoslourenco<wbr>@gmail.com</span>
             </a>
@@ -424,29 +436,29 @@
           <ul class="socials">
             <li>
               <a href="https://www.linkedin.com/in/renato-santos-lourenco" target="_blank" rel="noopener noreferrer" class="social">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zm2-3a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
-                <span>LinkedIn</span><span class="social-handle">renato-santos-lourenco</span>
+                <span class="social-name">LinkedIn</span><span class="social-handle">renato-santos-lourenco</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
                 <span class="sr-only">(abre em nova aba)</span>
               </a>
             </li>
             <li>
               <a href="https://github.com/RenatoStosl" target="_blank" rel="noopener noreferrer" class="social">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-                <span>GitHub</span><span class="social-handle">RenatoStosl</span>
+                <span class="social-name">GitHub</span><span class="social-handle">RenatoStosl</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
                 <span class="sr-only">(abre em nova aba)</span>
               </a>
             </li>
             <li>
               <a href="https://wa.me/5583999043628" target="_blank" rel="noopener noreferrer" class="social">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Zm0 0a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
-                <span>WhatsApp</span><span class="social-handle">+55 83 99904-3628</span>
+                <span class="social-name">WhatsApp</span><span class="social-handle">+55 83 99904-3628</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
                 <span class="sr-only">(abre em nova aba)</span>
               </a>
             </li>
             <li>
               <a href="https://instagram.com/renatosantos.l" target="_blank" rel="noopener noreferrer" class="social">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
-                <span>Instagram</span><span class="social-handle">@renatosantos.l</span>
+                <span class="social-name">Instagram</span><span class="social-handle">@renatosantos.l</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
                 <span class="sr-only">(abre em nova aba)</span>
               </a>
             </li>
@@ -457,9 +469,15 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="footer-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Renato Santos</span><span>Front-End</span><span>Renato Santos</span><span>Front-End</span>
+        <span>Renato Santos</span><span>Front-End</span><span>Renato Santos</span><span>Front-End</span>
+      </div>
+    </div>
+    <div class="container footer-bar">
       <p>© <span data-year>2026</span> Renato Santos Lourenço · João Pessoa, PB</p>
-      <a href="#topo" class="to-top">
+      <a href="#topo" class="link-arrow">
         Voltar ao topo
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
       </a>

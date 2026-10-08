@@ -1,45 +1,42 @@
 /* ==========================================================================
    GLOBAL — tokens, reset, base e utilitários
+   Identidade monocromática: preto, branco e precisão.
    Tokens em três camadas: primitivos → semânticos → uso nos componentes.
    ========================================================================== */
 
 /* PRIMITIVOS */
 :root {
-  --zinc-0: #ffffff;
-  --zinc-50: #fafaf9;
-  --zinc-100: #f4f4f5;
-  --zinc-200: #e4e4e7;
-  --zinc-300: #d4d4d8;
-  --zinc-400: #a1a1aa;
-  --zinc-500: #71717a;
-  --zinc-600: #52525b;
-  --zinc-800: #1f1f23;
-  --zinc-850: #18181b;
-  --zinc-900: #111113;
-  --zinc-950: #09090b;
-
-  --blue-300: #8fb2ff;
-  --blue-400: #6b9bff;
-  --blue-600: #2563eb;
-  --blue-700: #1d4ed8;
+  --white: #ffffff;
+  --gray-50: #f6f6f5;
+  --gray-100: #eeeeec;
+  --gray-200: #e2e2df;
+  --gray-300: #c9c9c5;
+  --gray-400: #9a9a96;
+  --gray-500: #6e6e6a;
+  --gray-600: #52524f;
+  --gray-800: #1c1c1c;
+  --gray-850: #141414;
+  --gray-900: #0d0d0d;
+  --black: #050505;
 
   --green-500: #22c55e;
 
   /* Tipografia */
-  --font-display: "Archivo", system-ui, sans-serif;
-  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter Tight", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.375rem;
-  --text-2xl: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
-  --text-3xl: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem);
-  --text-hero: clamp(3rem, 1.6rem + 6.4vw, 7rem);
+  --text-lg: 1.1875rem;
+  --text-xl: 1.5rem;
+  --text-2xl: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+  --text-3xl: clamp(2.5rem, 1.6rem + 3.6vw, 4.75rem);
+  --text-hero: clamp(3.25rem, 1.4rem + 7.6vw, 8.5rem);
+  --text-giant: clamp(4rem, 2rem + 9vw, 11rem);
 
-  /* Espaçamento (escala espaçosa) */
+  /* Espaçamento */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -49,46 +46,44 @@
   --space-7: 3rem;
   --space-8: 4rem;
   --space-9: 6rem;
-  --space-10: 8rem;
+  --space-10: 9rem;
 
   /* Forma */
-  --radius-sm: 6px;
-  --radius: 14px;
-  --radius-lg: 22px;
+  --radius-sm: 8px;
+  --radius: 16px;
+  --radius-lg: 28px;
   --radius-pill: 999px;
 
   /* Movimento */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 150ms;
-  --dur: 240ms;
-  --dur-slow: 700ms;
+  --dur: 280ms;
+  --dur-slow: 900ms;
 
-  --container: 1180px;
+  --container: 1280px;
   --gutter: clamp(1rem, 4vw, 3rem);
-  --header-h: 68px;
+  --header-h: 76px;
 }
 
 /* SEMÂNTICOS — tema claro (padrão) */
 :root {
   color-scheme: light;
-  --bg: var(--zinc-50);
-  --surface: var(--zinc-0);
-  --surface-2: var(--zinc-100);
-  --ink: var(--zinc-950);
-  --ink-muted: var(--zinc-600);
-  --ink-faint: var(--zinc-500);
-  --border: var(--zinc-200);
-  --border-strong: var(--zinc-300);
-  --accent: var(--blue-600);
-  --accent-hover: var(--blue-700);
-  --on-accent: var(--zinc-0);
-  --accent-soft: rgba(37, 99, 235, 0.08);
-  --inverse-bg: var(--zinc-950);
-  --inverse-ink: var(--zinc-50);
-  --inverse-muted: var(--zinc-400);
-  --header-bg: rgba(250, 250, 249, 0.8);
-  --shadow: 0 1px 2px rgba(9, 9, 11, 0.04), 0 12px 32px -12px rgba(9, 9, 11, 0.14);
-  --grid-line: rgba(9, 9, 11, 0.045);
+  --bg: var(--gray-50);
+  --surface: var(--white);
+  --surface-2: var(--gray-100);
+  --ink: var(--black);
+  --ink-muted: var(--gray-600);
+  --ink-faint: var(--gray-500);
+  --border: var(--gray-200);
+  --border-strong: var(--gray-300);
+  --accent: var(--black);
+  --on-accent: var(--white);
+  --inverse-bg: var(--black);
+  --inverse-surface: var(--gray-850);
+  --inverse-ink: var(--gray-50);
+  --inverse-muted: var(--gray-400);
+  --inverse-border: #262626;
+  --header-bg: rgba(246, 246, 245, 0.78);
   --success: #15803d;
 }
 
@@ -96,48 +91,44 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: var(--zinc-950);
-    --surface: var(--zinc-900);
-    --surface-2: var(--zinc-850);
-    --ink: var(--zinc-50);
-    --ink-muted: var(--zinc-400);
-    --ink-faint: #8b8b94;
-    --border: var(--zinc-800);
-    --border-strong: #2e2e33;
-    --accent: var(--blue-400);
-    --accent-hover: var(--blue-300);
-    --on-accent: var(--zinc-950);
-    --accent-soft: rgba(107, 155, 255, 0.1);
-    --inverse-bg: var(--zinc-50);
-    --inverse-ink: var(--zinc-950);
-    --inverse-muted: var(--zinc-600);
-    --header-bg: rgba(9, 9, 11, 0.75);
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
-    --grid-line: rgba(255, 255, 255, 0.04);
+    --bg: var(--black);
+    --surface: var(--gray-900);
+    --surface-2: var(--gray-850);
+    --ink: var(--gray-50);
+    --ink-muted: var(--gray-400);
+    --ink-faint: #858581;
+    --border: var(--gray-800);
+    --border-strong: #2c2c2c;
+    --accent: var(--white);
+    --on-accent: var(--black);
+    --inverse-bg: var(--gray-50);
+    --inverse-surface: var(--white);
+    --inverse-ink: var(--black);
+    --inverse-muted: var(--gray-600);
+    --inverse-border: var(--gray-200);
+    --header-bg: rgba(5, 5, 5, 0.72);
     --success: var(--green-500);
   }
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: var(--zinc-950);
-  --surface: var(--zinc-900);
-  --surface-2: var(--zinc-850);
-  --ink: var(--zinc-50);
-  --ink-muted: var(--zinc-400);
-  --ink-faint: #8b8b94;
-  --border: var(--zinc-800);
-  --border-strong: #2e2e33;
-  --accent: var(--blue-400);
-  --accent-hover: var(--blue-300);
-  --on-accent: var(--zinc-950);
-  --accent-soft: rgba(107, 155, 255, 0.1);
-  --inverse-bg: var(--zinc-50);
-  --inverse-ink: var(--zinc-950);
-  --inverse-muted: var(--zinc-600);
-  --header-bg: rgba(9, 9, 11, 0.75);
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
-  --grid-line: rgba(255, 255, 255, 0.04);
+  --bg: var(--black);
+  --surface: var(--gray-900);
+  --surface-2: var(--gray-850);
+  --ink: var(--gray-50);
+  --ink-muted: var(--gray-400);
+  --ink-faint: #858581;
+  --border: var(--gray-800);
+  --border-strong: #2c2c2c;
+  --accent: var(--white);
+  --on-accent: var(--black);
+  --inverse-bg: var(--gray-50);
+  --inverse-surface: var(--white);
+  --inverse-ink: var(--black);
+  --inverse-muted: var(--gray-600);
+  --inverse-border: var(--gray-200);
+  --header-bg: rgba(5, 5, 5, 0.72);
   --success: var(--green-500);
 }
 
@@ -197,24 +188,40 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
   text-wrap: balance;
+}
+
+h2 {
+  font-size: var(--text-3xl);
+}
+
+h3 {
+  font-size: var(--text-xl);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 p {
   text-wrap: pretty;
 }
 
+strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
 ::selection {
-  background: var(--accent);
-  color: var(--on-accent);
+  background: var(--ink);
+  color: var(--bg);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--ink);
   outline-offset: 3px;
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
 }
 
 /* LAYOUT */
@@ -225,12 +232,7 @@ p {
   padding-inline: var(--gutter);
 }
 
-.section {
-  padding-block: clamp(var(--space-8), 10vw, var(--space-10));
-  border-top: 1px solid var(--border);
-}
-
-/* ACESSIBILIDADE */
+/* UTILITÁRIOS */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -247,28 +249,28 @@ p {
   position: absolute;
   top: var(--space-3);
   left: var(--space-3);
-  z-index: 200;
-  padding: var(--space-3) var(--space-4);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
   background: var(--ink);
   color: var(--bg);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   font-weight: 600;
   transform: translateY(-200%);
-  transition: transform var(--dur-fast) ease;
+  transition: transform var(--dur) var(--ease-out);
 }
 
 .skip-link:focus {
-  transform: translateY(0);
+  transform: none;
 }
 
-/* REVEAL ON SCROLL — só ativa quando o JS adiciona .js ao <html> */
+/* REVEAL — só esconde quando há JS */
 .js [data-reveal] {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(28px);
   transition:
     opacity var(--dur-slow) var(--ease-out),
     transform var(--dur-slow) var(--ease-out);
-  transition-delay: calc(var(--reveal-i, 0) * 70ms);
+  transition-delay: calc(var(--reveal-i, 0) * 80ms);
 }
 
 .js [data-reveal].is-visible {
@@ -287,7 +289,6 @@ p {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    transition-delay: 0ms !important;
   }
 
   .js [data-reveal] {
